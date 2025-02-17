@@ -1,0 +1,48 @@
+syntax = "proto3";
+package qbychat.websocket.protocol;
+
+import "google/protobuf/any.proto";
+
+option java_package = "org.cubewhy.qbychat.websocket.protocol";
+
+message ClientboundMessage {
+  oneof content {
+    protocol.Response response = 1;
+    google.protobuf.Any event = 2;
+    protocol.EncryptResponse encrypt_response = 3;
+  }
+}
+
+message Response {
+  string ticket = 1;
+  bytes payload = 2;
+}
+
+message EncryptResponse {
+  bytes public_key = 1; // server public key
+}
+
+message ServerboundMessage {
+  oneof content {
+    protocol.Handshake handshake = 1;
+    protocol.Request request = 2;
+  }
+}
+
+message Handshake {
+  protocol.ClientInfo client_info = 1;
+  bytes public_key = 2; // client public key
+}
+
+message ClientInfo {
+  string name = 1; // client name
+  string version = 2; // client version
+}
+
+message Request {
+  string ticket = 1;
+  string service = 2;
+  string method = 3;
+
+  bytes payload = 4;
+}
