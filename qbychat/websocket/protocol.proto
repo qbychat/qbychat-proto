@@ -29,7 +29,9 @@ message ServerboundMessage {
 
 message ClientHandshake {
   protocol.ClientInfo client_info = 1;
-  optional bytes public_key = 2; // client public key
+  optional bytes public_key = 2; // client public key (ECDH)
+  optional bytes aes_key_salt = 3;
+  optional fixed32 aes_key_length = 4;
 }
 
 message ServerHandshake {
