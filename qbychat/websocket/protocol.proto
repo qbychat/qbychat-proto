@@ -32,6 +32,7 @@ message ClientHandshake {
   optional bytes public_key = 2; // client public key (ECDH)
   optional bytes aes_key_salt = 3;
   optional fixed32 aes_key_length = 4;
+  optional bytes aes_key_info = 5;
 }
 
 message ServerHandshake {
