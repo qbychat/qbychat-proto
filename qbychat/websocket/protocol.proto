@@ -38,7 +38,18 @@ message ServerHandshake {
 
 message ClientInfo {
   string name = 1; // client name
-  string version = 2; // client version
+  Platform platform = 2;
+  string version = 3; // client version
+}
+
+enum Platform {
+  LINUX = 0;
+  WINDOWS = 1;
+  OSX = 2;
+
+  ANDROID = 3;
+  IOS = 4;
+  UNKNOWN = 5;
 }
 
 message Request {
