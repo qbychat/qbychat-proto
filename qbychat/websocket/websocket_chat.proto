@@ -1,0 +1,18 @@
+syntax = "proto3";
+package qbychat.websocket.chat;
+
+option java_package = "org.cubewhy.qbychat.websocket.chat";
+
+enum ChatType {
+    GROUP = 0;
+    CHANNEL = 1;
+    PRIVATE_MESSAGE = 2;
+}
+
+message CreateChatRequest {
+    // todo create chat request
+}
+
+message CreateChatResponse {
+    // todo create chat response
+}
