@@ -1,6 +1,8 @@
 syntax = "proto3";
 package qbychat.websocket.chat;
 
+import "google/protobuf/timestamp.proto";
+
 option java_package = "org.cubewhy.qbychat.websocket.chat";
 
 message Chat {
@@ -9,6 +11,26 @@ message Chat {
     string title = 3;
     optional string description = 4;
     ChatType type = 5;
+
+    optional Member member_info = 6; // self info
+}
+
+message Member {
+    optional string nickname = 1;
+    bool pinned = 2;
+    bool owner = 3;
+    NotificationPreferences notification_preferences = 4;
+}
+
+message NotificationPreferences {
+    NotificationStatus status = 1;
+    optional google.protobuf.Timestamp mutedUntil = 2;
+}
+
+enum NotificationStatus {
+    ALL = 0;
+    MENTIONS_ONLY = 1;
+    NONE = 2;
 }
 
 enum ChatType {
