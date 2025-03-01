@@ -3,16 +3,38 @@ package qbychat.websocket.chat;
 
 option java_package = "org.cubewhy.qbychat.websocket.chat";
 
+message Chat {
+    string chat_id = 1;
+    optional string name = 2;
+    string title = 3;
+    optional string description = 4;
+    ChatType type = 5;
+}
+
 enum ChatType {
     GROUP = 0;
     CHANNEL = 1;
     PRIVATE_MESSAGE = 2;
 }
 
-message CreateChatRequest {
-    // todo create chat request
+message SyncRequest {
 }
 
-message CreateChatResponse {
-    // todo create chat response
+message SyncResponse {
+    repeated Chat chats = 1;
+}
+
+message CreateGroupRequest {
+    string title = 2;
+}
+
+message CreateGroupResponse {
+}
+
+message AddChatEvent {
+    Chat chat = 1;
+}
+
+message RemoveChatEvent {
+    Chat chat = 1;
 }
