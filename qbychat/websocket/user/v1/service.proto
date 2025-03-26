@@ -1,0 +1,33 @@
+syntax = "proto3";
+package qbychat.websocket.user.v1;
+
+import "google/protobuf/timestamp.proto";
+import "qbychat/websocket/user/v1/common.proto";
+
+option java_package = "org.cubewhy.qbychat.websocket.user.v1";
+option java_outer_classname = "ServiceProto";
+option java_multiple_files = true;
+
+message RegisterRequest {
+  string username = 1;
+  string password = 2;
+}
+
+message RegisterResponse {
+  Status status = 1;
+  optional string message = 2;
+
+  enum Status {
+    SUCCESS = 0;
+    USERNAME_EXISTS = 1;
+    BAD_USERNAME = 2;
+  }
+}
+
+message SyncRequest {
+
+}
+
+message SyncResponse {
+  User user = 1;
+}

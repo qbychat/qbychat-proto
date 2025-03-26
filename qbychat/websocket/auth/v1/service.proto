@@ -1,0 +1,69 @@
+syntax = "proto3";
+package qbychat.websocket.auth.v1;
+
+import "google/protobuf/any.proto";
+import "qbychat/common/v1/client_info.proto";
+import "qbychat/websocket/user/v1/common.proto";
+
+option java_package = "org.cubewhy.qbychat.websocket.auth.v1";
+option java_outer_classname = "CommonProto";
+option java_multiple_files = true;
+
+message CreateSessionRequest {
+  common.v1.ClientInfo client_info = 1;
+}
+
+message CreateSessionResponse {
+  optional string token = 1;
+  Status status = 2;
+
+  enum Status {
+    SUCCESS = 0;
+    SESSION_EXISTS = 1;
+  }
+}
+
+message RestoreSessionRequest {
+  string token = 1;
+}
+
+message RestoreSessionResponse {
+  Status status = 1;
+
+  repeated user.v1.User accounts = 2;
+  optional string active_account = 3; // primary account
+
+  enum Status {
+    SUCCESS = 0;
+    SESSION_NOT_FOUND = 1;
+  }
+}
+
+message SwitchPrimaryAccountRequest {
+  string account = 1;
+}
+
+message SwitchPrimaryAccountResponse {
+  Status status = 1;
+
+  enum Status {
+    SUCCESS = 0;
+    UNAUTHORIZED = 1;
+  }
+}
+
+message UsernamePasswordLoginRequest {
+  string username = 1;
+  string password = 2;
+}
+
+message UsernamePasswordLoginResponse {
+  Status status = 1;
+
+  enum Status {
+    SUCCESS = 0;
+    BAD_USERNAME_OR_PASSWORD = 1;
+
+    USER_BANNED = 2;
+  }
+}
