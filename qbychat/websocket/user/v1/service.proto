@@ -29,5 +29,6 @@ message SyncRequest {
 }
 
 message SyncResponse {
-  User user = 1;
+  PublicUserInfo public_info = 1;
+  PrivateUserInfo private_info = 2;
 }

@@ -9,7 +9,7 @@ option java_outer_classname = "CommonProto";
 option java_multiple_files = true;
 
 message ClientboundMessage {
-  optional string account = 1; // account id
+  optional string user_id = 1;
 
   oneof content {
     protocol.v1.Response response = 2;
@@ -20,7 +20,7 @@ message ClientboundMessage {
 
 message Response {
   string ticket = 1;
-  bytes payload = 2;
+  optional bytes payload = 2;
   
   Status status = 3;
   
@@ -34,7 +34,7 @@ message Response {
 }
 
 message ServerboundMessage {
-  optional string account = 1; // account id
+  optional string user_id = 1;
 
   oneof content {
     protocol.v1.ClientHandshake client_handshake = 2;
@@ -69,12 +69,17 @@ message Request {
 }
 
 enum RequestType {
-  // session service
-  REGISTER_CLIENT = 0;
-  RESTORE_CLIENT = 1;
-  SWITCH_PRIMARY_ACCOUNT = 2;
-  TERMINATE_SESSION = 3;
+  UNKNOWN = 0;
   
-  // auth service
-  USERNAME_PASSWORD_LOGIN = 4;
+  // session service v1
+  REGISTER_CLIENT_V1 = 100;
+  RESTORE_CLIENT_V1 = 101;
+  SWITCH_PRIMARY_ACCOUNT_V1 = 102;
+  TERMINATE_SESSION_V1 = 103;
+  LIST_SESSIONS_V1 = 104;
+  
+  // auth service v1
+  USERNAME_PASSWORD_LOGIN_V1 = 105;
+  
+  
 }

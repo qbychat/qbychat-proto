@@ -4,6 +4,7 @@ package qbychat.websocket.session.v1;
 import "google/protobuf/any.proto";
 import "qbychat/common/v1/client_info.proto";
 import "qbychat/websocket/user/v1/common.proto";
+import "qbychat/websocket/session/v1/common.proto";
 
 option java_package = "org.cubewhy.qbychat.websocket.session.v1";
 option java_outer_classname = "ServiceProto";
@@ -15,7 +16,8 @@ message RegisterClientRequest {
 
 message RegisterClientResponse {
   optional string token = 1;
-  Status status = 2;
+  session.v1.Client session = 2;
+  Status status = 3;
 
   enum Status {
     SUCCESS = 0;
@@ -30,9 +32,9 @@ message RestoreClientRequest {
 message RestoreClientResponse {
   Status status = 1;
 
-  repeated user.v1.User accounts = 2;
-  optional string active_account = 3; // primary account
-
+  repeated user.v1.PublicUserInfo accounts = 2;
+  optional string current_account_id = 3;
+  
   enum Status {
     SUCCESS = 0;
     SESSION_NOT_FOUND = 1;
@@ -53,7 +55,7 @@ message SwitchPrimaryAccountResponse {
 }
 
 message TerminateSessionRequest {
-  string session = 1; // session id
+  string session_id = 1; // session id
 }
 
 message TerminateSessionResponse {
@@ -64,4 +66,12 @@ message TerminateSessionResponse {
     SESSION_NOT_FUND = 1;
     FORBIDDEN = 2;
   }
+}
+
+message ListSessionsRequest {
+  
+}
+
+message ListSessionsResponse {
+  repeated Session sessions = 1;
 }

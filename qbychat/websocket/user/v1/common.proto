@@ -12,11 +12,15 @@ enum Role {
   ADMIN = 1;
 }
 
-message User {
+message PublicUserInfo {
   string username = 1;
   string nickname = 2;
   optional string bio = 3;
+}
 
-  repeated user.v1.Role roles = 4;
-  optional google.protobuf.Timestamp createdAt = 5;
+message PrivateUserInfo {
+  string user_id = 1;
+  
+  repeated user.v1.Role roles = 2;
+  google.protobuf.Timestamp create_time = 3;
 }
