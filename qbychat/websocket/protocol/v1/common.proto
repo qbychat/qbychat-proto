@@ -10,6 +10,7 @@ option java_multiple_files = true;
 
 message ClientboundMessage {
   optional string account = 1; // account id
+
   oneof content {
     protocol.v1.Response response = 2;
     google.protobuf.Any event = 3;
@@ -20,10 +21,21 @@ message ClientboundMessage {
 message Response {
   string ticket = 1;
   bytes payload = 2;
+  
+  Status status = 3;
+  
+  enum Status {
+    SUCCESS = 0;
+    UNAUTHORIZED = 1;
+    FORBIDDEN = 2;
+    INTERNAL_ERROR = 3;
+    BAD_REQUEST = 4;
+  }
 }
 
 message ServerboundMessage {
   optional string account = 1; // account id
+
   oneof content {
     protocol.v1.ClientHandshake client_handshake = 2;
     protocol.v1.Request request = 3;
@@ -31,20 +43,38 @@ message ServerboundMessage {
 }
 
 message ClientHandshake {
-  common.v1.ClientInfo client_info = 1;
-  optional bytes public_key = 2; // client public key (ECDH)
-  optional bytes aes_key_salt = 3;
-  optional fixed32 aes_key_length = 4;
-  optional bytes aes_key_info = 5;
+  optional ClientEncryptionInfo encryption_info = 1;
 }
 
 message ServerHandshake {
+  optional ServerEncryptionInfo encryption_info = 1;
+}
+
+message ClientEncryptionInfo {
+  bytes public_key = 2; // client public key (ECDH)
+  bytes aes_key_salt = 3;
+  fixed32 aes_key_length = 4;
+  bytes aes_key_info = 5;
+}
+
+message ServerEncryptionInfo {
   optional bytes public_key = 1; // server public key
 }
 
 message Request {
-  string ticket = 1;
-  string route = 2;
+  bytes ticket = 1;
+  RequestType type = 2;
 
-  bytes payload = 3;
+  bytes payload = 4;
+}
+
+enum RequestType {
+  // session service
+  REGISTER_CLIENT = 0;
+  RESTORE_CLIENT = 1;
+  SWITCH_PRIMARY_ACCOUNT = 2;
+  TERMINATE_SESSION = 3;
+  
+  // auth service
+  USERNAME_PASSWORD_LOGIN = 4;
 }
