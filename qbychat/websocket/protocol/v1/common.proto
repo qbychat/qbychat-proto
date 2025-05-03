@@ -8,6 +8,14 @@ option java_package = "org.cubewhy.qbychat.websocket.protocol.v1";
 option java_outer_classname = "CommonProto";
 option java_multiple_files = true;
 
+message EncryptedMessage {
+  uint64 session_id = 1;
+  uint64 sequence_number = 2;
+  bytes nonce = 3;
+  bytes ciphertext = 4;
+  bytes auth_tag = 5;
+}
+
 message ClientboundMessage {
   optional string user_id = 1;
 
@@ -21,9 +29,9 @@ message ClientboundMessage {
 message Response {
   string ticket = 1;
   optional bytes payload = 2;
-  
+
   Status status = 3;
-  
+
   enum Status {
     SUCCESS = 0;
     UNAUTHORIZED = 1;
@@ -51,14 +59,14 @@ message ServerHandshake {
 }
 
 message ClientEncryptionInfo {
-  bytes public_key = 2; // client public key (ECDH)
+  bytes public_key = 2; // client public key
   bytes aes_key_salt = 3;
   fixed32 aes_key_length = 4;
   bytes aes_key_info = 5;
 }
 
 message ServerEncryptionInfo {
-  optional bytes public_key = 1; // server public key
+  bytes public_key = 1; // server public key
 }
 
 message Request {
@@ -70,16 +78,16 @@ message Request {
 
 enum RequestType {
   UNKNOWN = 0;
-  
+
   // session service v1
   REGISTER_CLIENT_V1 = 100;
   RESTORE_CLIENT_V1 = 101;
   SWITCH_PRIMARY_ACCOUNT_V1 = 102;
   TERMINATE_SESSION_V1 = 103;
   LIST_SESSIONS_V1 = 104;
-  
+
   // auth service v1
   USERNAME_PASSWORD_LOGIN_V1 = 105;
-  
-  
+
+
 }
