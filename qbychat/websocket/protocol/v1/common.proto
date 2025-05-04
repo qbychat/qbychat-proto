@@ -13,7 +13,6 @@ message EncryptedMessage {
   uint64 sequence_number = 2;
   bytes nonce = 3;
   bytes ciphertext = 4;
-  bytes auth_tag = 5;
 }
 
 message ClientboundMessage {
@@ -22,7 +21,6 @@ message ClientboundMessage {
   oneof content {
     protocol.v1.Response response = 2;
     google.protobuf.Any event = 3;
-    protocol.v1.ServerHandshake server_handshake = 4;
   }
 }
 
@@ -45,16 +43,15 @@ message ServerboundMessage {
   optional string user_id = 1;
 
   oneof content {
-    protocol.v1.ClientHandshake client_handshake = 2;
-    protocol.v1.Request request = 3;
+    protocol.v1.Request request = 2;
   }
 }
 
-message ClientHandshake {
+message ServerboundHandshake {
   optional ClientEncryptionInfo encryption_info = 1;
 }
 
-message ServerHandshake {
+message ClientboundHandshake {
   optional ServerEncryptionInfo encryption_info = 1;
 }
 
@@ -67,6 +64,7 @@ message ClientEncryptionInfo {
 
 message ServerEncryptionInfo {
   bytes public_key = 1; // server public key
+  uint64 session_id = 2;
 }
 
 message Request {
