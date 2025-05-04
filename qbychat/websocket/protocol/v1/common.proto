@@ -57,9 +57,7 @@ message ClientboundHandshake {
 
 message ClientEncryptionInfo {
   bytes public_key = 2; // client public key
-  bytes aes_key_salt = 3;
-  fixed32 aes_key_length = 4;
-  bytes aes_key_info = 5;
+  bytes chacha20_key_info = 5;
 }
 
 message ServerEncryptionInfo {
