@@ -19,12 +19,12 @@ message ClientboundMessage {
   optional string user_id = 1;
 
   oneof content {
-    protocol.v1.Response response = 2;
+    protocol.v1.RPCResponse response = 2;
     google.protobuf.Any event = 3;
   }
 }
 
-message Response {
+message RPCResponse {
   bytes ticket = 1;
   optional bytes payload = 2;
 
@@ -42,7 +42,7 @@ message Response {
 
 message ServerboundMessage {
   optional string user_id = 1;
-  protocol.v1.Request request = 2;
+  protocol.v1.RPCRequest request = 2;
 }
 
 message ServerboundHandshake {
@@ -63,7 +63,7 @@ message ServerEncryptionInfo {
   uint64 session_id = 2;
 }
 
-message Request {
+message RPCRequest {
   bytes ticket = 1;
   RequestMethod method = 2;
 
