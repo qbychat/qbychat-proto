@@ -25,7 +25,7 @@ message ClientboundMessage {
 }
 
 message Response {
-  string ticket = 1;
+  bytes ticket = 1;
   optional bytes payload = 2;
 
   Status status = 3;
