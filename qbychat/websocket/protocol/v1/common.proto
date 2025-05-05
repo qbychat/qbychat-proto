@@ -67,7 +67,7 @@ message Request {
   bytes ticket = 1;
   RequestType type = 2;
 
-  bytes payload = 4;
+  optional bytes payload = 4;
 }
 
 enum RequestType {
