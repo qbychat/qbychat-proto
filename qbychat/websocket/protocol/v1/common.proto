@@ -29,6 +29,7 @@ message Response {
   optional bytes payload = 2;
 
   Status status = 3;
+  optional string message = 4;
 
   enum Status {
     SUCCESS = 0;
@@ -41,10 +42,7 @@ message Response {
 
 message ServerboundMessage {
   optional string user_id = 1;
-
-  oneof content {
-    protocol.v1.Request request = 2;
-  }
+  protocol.v1.Request request = 2;
 }
 
 message ServerboundHandshake {
