@@ -65,12 +65,12 @@ message ServerEncryptionInfo {
 
 message Request {
   bytes ticket = 1;
-  RequestType type = 2;
+  RequestMethod method = 2;
 
   optional bytes payload = 4;
 }
 
-enum RequestType {
+enum RequestMethod {
   UNKNOWN = 0;
 
   // session service v1
