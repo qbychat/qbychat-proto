@@ -10,18 +10,11 @@ option java_outer_classname = "ServiceProto";
 option java_multiple_files = true;
 
 message RegisterClientRequest {
-  common.v1.ClientInfo client_info = 1;
+  common.v1.ClientMetadata client_metadata = 1;
 }
 
 message RegisterClientResponse {
-  optional string token = 1;
-  session.v1.Client session = 2;
-  Status status = 3;
-
-  enum Status {
-    SUCCESS = 0;
-    SESSION_EXISTS = 1;
-  }
+  string token = 1;
 }
 
 message RestoreClientRequest {
