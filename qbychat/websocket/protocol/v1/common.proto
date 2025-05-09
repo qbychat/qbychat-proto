@@ -37,6 +37,7 @@ message RPCResponse {
     FORBIDDEN = 2;
     INTERNAL_ERROR = 3;
     BAD_REQUEST = 4;
+    NOT_FOUND = 5;
   }
 }
 
