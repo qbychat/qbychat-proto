@@ -14,4 +14,6 @@ enum Platform {
 
   ANDROID = 4;
   IOS = 5;
+  
+  WEB = 6;
 }
