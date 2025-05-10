@@ -17,20 +17,13 @@ message RegisterClientResponse {
   string token = 1;
 }
 
-message RestoreClientRequest {
+message ResumeClientRequest {
   string token = 1;
 }
 
-message RestoreClientResponse {
-  Status status = 1;
-
+message ResumeClientResponse {
   repeated user.v1.PublicUserInfo accounts = 2;
   optional string current_account_id = 3;
-  
-  enum Status {
-    SUCCESS = 0;
-    SESSION_NOT_FOUND = 1;
-  }
 }
 
 message SwitchPrimaryAccountRequest {
