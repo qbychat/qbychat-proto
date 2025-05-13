@@ -22,8 +22,8 @@ message ResumeClientRequest {
 }
 
 message ResumeClientResponse {
-  repeated user.v1.PublicUserInfo accounts = 2;
-  optional string current_account_id = 3;
+  repeated string account_ids = 1;
+  string current_account_id = 2;
 }
 
 message SwitchPrimaryAccountRequest {
