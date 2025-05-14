@@ -7,14 +7,13 @@ option java_package = "org.cubewhy.qbychat.websocket.user.v1";
 option java_outer_classname = "ServiceProto";
 option java_multiple_files = true;
 
-message RegisterRequest {
+message RegisterAccountRequest {
   string username = 1;
   string password = 2;
 }
 
-message RegisterResponse {
+message RegisterAccountResponse {
   Status status = 1;
-  optional string message = 2;
 
   enum Status {
     SUCCESS = 0;

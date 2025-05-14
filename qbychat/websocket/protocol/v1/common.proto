@@ -86,6 +86,7 @@ enum RequestMethod {
 
   // auth service v1
   USERNAME_PASSWORD_LOGIN_V1 = 105;
-
-
+  
+  // user service v1
+  REGISTER_ACCOUNT_V1 = 106;
 }
