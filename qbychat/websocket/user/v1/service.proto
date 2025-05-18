@@ -3,9 +3,9 @@ package qbychat.websocket.user.v1;
 
 import "qbychat/websocket/user/v1/common.proto";
 
-option java_package = "org.cubewhy.qbychat.websocket.user.v1";
-option java_outer_classname = "ServiceProto";
 option java_multiple_files = true;
+option java_outer_classname = "ServiceProto";
+option java_package = "org.cubewhy.qbychat.websocket.user.v1";
 
 message RegisterAccountRequest {
   string username = 1;
@@ -24,9 +24,7 @@ message RegisterAccountResponse {
   }
 }
 
-message SyncRequest {
-
-}
+message SyncRequest {}
 
 message SyncResponse {
   PublicUserInfo public_info = 1;

@@ -4,9 +4,9 @@ package qbychat.websocket.auth.v1;
 import "qbychat/common/v1/client_info.proto";
 import "qbychat/websocket/user/v1/common.proto";
 
-option java_package = "org.cubewhy.qbychat.websocket.auth.v1";
-option java_outer_classname = "ServiceProto";
 option java_multiple_files = true;
+option java_outer_classname = "ServiceProto";
+option java_package = "org.cubewhy.qbychat.websocket.auth.v1";
 
 message UsernamePasswordLoginRequest {
   string username = 1;

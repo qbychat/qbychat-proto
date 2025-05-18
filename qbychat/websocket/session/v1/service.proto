@@ -2,12 +2,12 @@ syntax = "proto3";
 package qbychat.websocket.session.v1;
 
 import "qbychat/common/v1/client_info.proto";
-import "qbychat/websocket/user/v1/common.proto";
 import "qbychat/websocket/session/v1/common.proto";
+import "qbychat/websocket/user/v1/common.proto";
 
-option java_package = "org.cubewhy.qbychat.websocket.session.v1";
-option java_outer_classname = "ServiceProto";
 option java_multiple_files = true;
+option java_outer_classname = "ServiceProto";
+option java_package = "org.cubewhy.qbychat.websocket.session.v1";
 
 message RegisterClientRequest {
   common.v1.ClientMetadata client_metadata = 1;
@@ -45,7 +45,7 @@ message TerminateSessionRequest {
 
 message TerminateSessionResponse {
   Status status = 1;
-  
+
   enum Status {
     SUCCESS = 0;
     SESSION_NOT_FUND = 1;
@@ -53,9 +53,7 @@ message TerminateSessionResponse {
   }
 }
 
-message ListSessionsRequest {
-  
-}
+message ListSessionsRequest {}
 
 message ListSessionsResponse {
   repeated Session sessions = 1;

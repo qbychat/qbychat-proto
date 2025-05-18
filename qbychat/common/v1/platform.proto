@@ -1,19 +1,19 @@
 syntax = "proto3";
 package qbychat.common.v1;
 
-option java_package = "org.cubewhy.qbychat.common.v1";
-option java_outer_classname = "PlatformProto";
 option java_multiple_files = true;
+option java_outer_classname = "PlatformProto";
+option java_package = "org.cubewhy.qbychat.common.v1";
 
 enum Platform {
   UNKNOWN = 0;
-  
+
   LINUX = 1;
   WINDOWS = 2;
   OSX = 3;
 
   ANDROID = 4;
   IOS = 5;
-  
+
   BROWSER = 6;
 }
