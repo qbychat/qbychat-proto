@@ -69,12 +69,12 @@ message ServerEncryptionInfo {
 
 message RPCRequest {
   bytes ticket = 1;
-  RequestMethod method = 2;
+  RPCRequestMethod method = 2;
 
   optional bytes payload = 4;
 }
 
-enum RequestMethod {
+enum RPCRequestMethod {
   UNKNOWN = 0;
 
   // session service v1

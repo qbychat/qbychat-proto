@@ -15,7 +15,7 @@ message UsernamePasswordLoginRequest {
 
 message UsernamePasswordLoginResponse {
   Status status = 1;
-  optional string session = 2; // session id
+  optional string account_id = 2;
 
   enum Status {
     SUCCESS = 0;
