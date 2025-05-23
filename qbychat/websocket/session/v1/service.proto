@@ -1,9 +1,8 @@
 syntax = "proto3";
 package qbychat.websocket.session.v1;
 
-import "qbychat/common/v1/client_info.proto";
+import "qbychat/common/v1/client_metadata.proto";
 import "qbychat/websocket/session/v1/common.proto";
-import "qbychat/websocket/user/v1/common.proto";
 
 option java_multiple_files = true;
 option java_outer_classname = "ServiceProto";
