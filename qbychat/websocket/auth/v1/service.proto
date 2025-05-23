@@ -1,9 +1,6 @@
 syntax = "proto3";
 package qbychat.websocket.auth.v1;
 
-import "qbychat/common/v1/client_info.proto";
-import "qbychat/websocket/user/v1/common.proto";
-
 option java_multiple_files = true;
 option java_outer_classname = "ServiceProto";
 option java_package = "org.cubewhy.qbychat.websocket.auth.v1";
@@ -18,9 +15,10 @@ message UsernamePasswordLoginResponse {
   optional string account_id = 2;
 
   enum Status {
-    SUCCESS = 0;
-    BAD_USERNAME_OR_PASSWORD = 1;
+    STATUS_UNSPECIFIED = 0;
 
-    USER_BANNED = 2;
+    STATUS_SUCCESS = 1;
+    STATUS_BAD_USERNAME_OR_PASSWORD = 2;
+    STATUS_USER_BANNED = 3;
   }
 }

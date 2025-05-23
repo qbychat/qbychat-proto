@@ -8,8 +8,10 @@ option java_outer_classname = "CommonProto";
 option java_package = "org.cubewhy.qbychat.websocket.user.v1";
 
 enum Role {
-  USER = 0;
-  ADMIN = 1;
+  ROLE_UNSPECIFIED = 0;
+
+  ROLE_USER = 1;
+  ROLE_ADMIN = 2;
 }
 
 message PublicUserInfo {

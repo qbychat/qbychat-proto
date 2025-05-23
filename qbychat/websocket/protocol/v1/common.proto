@@ -2,7 +2,6 @@ syntax = "proto3";
 package qbychat.websocket.protocol.v1;
 
 import "google/protobuf/any.proto";
-import "qbychat/common/v1/client_info.proto";
 
 option java_multiple_files = true;
 option java_outer_classname = "CommonProto";
@@ -32,15 +31,16 @@ message RPCResponse {
   optional string message = 4;
 
   enum Status {
-    UNKNOWN = 0;
-    SUCCESS = 200;
+    STATUS_UNSPECIFIED = 0;
+    
+    STATUS_SUCCESS = 200;
 
-    BAD_REQUEST = 400;
-    UNAUTHORIZED = 401;
-    FORBIDDEN = 403;
-    NOT_FOUND = 404;
+    STATUS_BAD_REQUEST = 400;
+    STATUS_UNAUTHORIZED = 401;
+    STATUS_FORBIDDEN = 403;
+    STATUS_NOT_FOUND = 404;
 
-    INTERNAL_ERROR = 500;
+    STATUS_INTERNAL_ERROR = 500;
   }
 }
 
@@ -75,18 +75,18 @@ message RPCRequest {
 }
 
 enum RPCRequestMethod {
-  UNKNOWN = 0;
+  RPC_REQUEST_METHOD_UNSPECIFIED = 0;
 
   // session service v1
-  REGISTER_CLIENT_V1 = 100;
-  RESUME_CLIENT_V1 = 101;
-  SWITCH_PRIMARY_ACCOUNT_V1 = 102;
-  TERMINATE_SESSION_V1 = 103;
-  LIST_SESSIONS_V1 = 104;
+  RPC_REQUEST_METHOD_REGISTER_CLIENT_V1 = 100;
+  RPC_REQUEST_METHOD_RESUME_CLIENT_V1 = 101;
+  RPC_REQUEST_METHOD_SWITCH_PRIMARY_ACCOUNT_V1 = 102;
+  RPC_REQUEST_METHOD_TERMINATE_SESSION_V1 = 103;
+  RPC_REQUEST_METHOD_LIST_SESSIONS_V1 = 104;
 
   // auth service v1
-  USERNAME_PASSWORD_LOGIN_V1 = 105;
+  RPC_REQUEST_METHOD_USERNAME_PASSWORD_LOGIN_V1 = 105;
 
   // user service v1
-  REGISTER_ACCOUNT_V1 = 106;
+  RPC_REQUEST_METHOD_REGISTER_ACCOUNT_V1 = 106;
 }

@@ -6,14 +6,14 @@ option java_outer_classname = "PlatformProto";
 option java_package = "org.cubewhy.qbychat.common.v1";
 
 enum Platform {
-  UNKNOWN = 0;
+  PLATFORM_UNSPECIFIED = 0;
 
-  LINUX = 1;
-  WINDOWS = 2;
-  OSX = 3;
+  PLATFORM_LINUX = 1;
+  PLATFORM_WINDOWS = 2;
+  PLATFORM_OSX = 3;
 
-  ANDROID = 4;
-  IOS = 5;
+  PLATFORM_ANDROID = 4;
+  PLATFORM_IOS = 5;
 
-  BROWSER = 6;
+  PLATFORM_BROWSER = 6;
 }

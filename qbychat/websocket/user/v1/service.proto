@@ -18,9 +18,10 @@ message RegisterAccountResponse {
   optional string account_id = 2;
 
   enum Status {
-    SUCCESS = 0;
-    USERNAME_EXISTS = 1;
-    BAD_USERNAME = 2;
+    STATUS_UNSPECIFIED = 0;
+    STATUS_SUCCESS = 1;
+    STATUS_USERNAME_EXISTS = 2;
+    STATUS_BAD_USERNAME = 3;
   }
 }
 
