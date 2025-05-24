@@ -33,8 +33,10 @@ message SwitchPrimaryAccountResponse {
   Status status = 1;
 
   enum Status {
-    SUCCESS = 0;
-    UNAUTHORIZED = 1;
+    STATUS_UNSPECIFIED = 0;
+
+    STATUS_SUCCESS = 1;
+    STATUS_UNAUTHORIZED = 2;
   }
 }
 
@@ -46,9 +48,11 @@ message TerminateSessionResponse {
   Status status = 1;
 
   enum Status {
-    SUCCESS = 0;
-    SESSION_NOT_FUND = 1;
-    FORBIDDEN = 2;
+    STATUS_UNSPECIFIED = 0;
+
+    STATUS_SUCCESS = 1;
+    STATUS_SESSION_NOT_FUND = 2;
+    STATUS_FORBIDDEN = 3;
   }
 }
 
