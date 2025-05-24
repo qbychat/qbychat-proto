@@ -92,4 +92,7 @@ enum RpcRequestMethod {
   // user service v1 (301-400)
   RPC_REQUEST_METHOD_USER_SYNC_V1 = 301;
   RPC_REQUEST_METHOD_REGISTER_ACCOUNT_V1 = 302;
+  
+  // conversation service v1 (401-500)
+  RPC_REQUEST_METHOD_CONVERSATION_SYNC_V1 = 401;
 }
