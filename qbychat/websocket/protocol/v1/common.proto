@@ -18,12 +18,12 @@ message ClientboundMessage {
   optional string user_id = 1;
 
   oneof content {
-    protocol.v1.RPCResponse response = 2;
+    protocol.v1.RpcResponse response = 2;
     google.protobuf.Any event = 3;
   }
 }
 
-message RPCResponse {
+message RpcResponse {
   bytes ticket = 1;
   optional bytes payload = 2;
 
@@ -46,7 +46,7 @@ message RPCResponse {
 
 message ServerboundMessage {
   optional string user_id = 1;
-  protocol.v1.RPCRequest request = 2;
+  protocol.v1.RpcRequest request = 2;
 }
 
 message ServerboundHandshake {
@@ -67,14 +67,14 @@ message ServerEncryptionInfo {
   uint64 session_id = 2;
 }
 
-message RPCRequest {
+message RpcRequest {
   bytes ticket = 1;
-  RPCRequestMethod method = 2;
+  RpcRequestMethod method = 2;
 
   optional bytes payload = 4;
 }
 
-enum RPCRequestMethod {
+enum RpcRequestMethod {
   RPC_REQUEST_METHOD_UNSPECIFIED = 0;
 
   // session service v1 (100-200)
