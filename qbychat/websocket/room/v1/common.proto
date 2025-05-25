@@ -1,0 +1,37 @@
+syntax = "proto3";
+package qbychat.websocket.room.v1;
+
+option java_multiple_files = true;
+option java_outer_classname = "CommonProto";
+option java_package = "org.cubewhy.qbychat.websocket.room.v1";
+
+message Room {
+  string room_id = 1;
+  RoomType type = 2;
+
+  oneof details {
+    PrivateRoom private = 10;
+    GroupRoom group = 11;
+    ChannelRoom channel = 12;
+  }
+}
+
+enum RoomType {
+  ROOM_TYPE_UNSPECIFIED = 0;
+
+  ROOM_TYPE_PRIVATE = 1;
+  ROOM_TYPE_GROUP = 2;
+  ROOM_TYPE_CHANNEL = 3;
+}
+
+message PrivateRoom {
+  // TODO private room
+}
+
+message GroupRoom {
+  // TODO groups
+}
+
+message ChannelRoom {
+  // TODO channels
+}
