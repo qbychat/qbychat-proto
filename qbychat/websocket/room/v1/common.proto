@@ -6,7 +6,8 @@ option java_outer_classname = "CommonProto";
 option java_package = "org.cubewhy.qbychat.websocket.room.v1";
 
 message Room {
-  string room_id = 1;
+  string room_name = 1;
+  // TODO server_name
   RoomType type = 2;
 
   oneof details {
@@ -25,13 +26,17 @@ enum RoomType {
 }
 
 message PrivateRoom {
-  // TODO private room
+  string peer_username = 1;
+  string peer_nickname = 2;
+  string peer_bio = 3;
 }
 
 message GroupRoom {
-  // TODO groups
+  string display_name = 1;
+  optional string description = 2;
 }
 
 message ChannelRoom {
-  // TODO channels
+  string display_name = 1;
+  string description = 2;
 }
