@@ -1,9 +1,11 @@
 syntax = "proto3";
-package qbychat.websocket.auth.v1;
+package qbychat.rpc.auth.v1;
+
+import "qbychat/common/v1/id.proto";
 
 option java_multiple_files = true;
 option java_outer_classname = "ServiceProto";
-option java_package = "org.cubewhy.qbychat.websocket.auth.v1";
+option java_package = "org.cubewhy.qbychat.rpc.auth.v1";
 
 message UsernamePasswordLoginRequest {
   string username = 1;
@@ -12,7 +14,7 @@ message UsernamePasswordLoginRequest {
 
 message UsernamePasswordLoginResponse {
   Status status = 1;
-  optional string account_id = 2;
+  optional common.v1.Id account_id = 2;
 
   enum Status {
     STATUS_UNSPECIFIED = 0;

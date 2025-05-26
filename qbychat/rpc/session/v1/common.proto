@@ -1,21 +1,22 @@
 syntax = "proto3";
-package qbychat.websocket.session.v1;
+package qbychat.rpc.session.v1;
 
+import "qbychat/common/v1/id.proto";
 import "google/protobuf/timestamp.proto";
 import "qbychat/common/v1/client_metadata.proto";
 
 option java_multiple_files = true;
 option java_outer_classname = "CommonProto";
-option java_package = "org.cubewhy.qbychat.websocket.session.v1";
+option java_package = "org.cubewhy.qbychat.rpc.session.v1";
 
 message Client {
-  string client_id = 1;
+  common.v1.Id client_id = 1;
   common.v1.ClientMetadata client_info = 2;
   google.protobuf.Timestamp create_time = 3;
 }
 
 message Session {
-  string session_id = 1;
+  common.v1.Id session_id = 1;
   Client client = 2;
   google.protobuf.Timestamp create_time = 3;
 }

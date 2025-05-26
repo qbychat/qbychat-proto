@@ -1,0 +1,13 @@
+syntax = "proto3";
+package qbychat.common.v1;
+
+option java_multiple_files = true;
+option java_outer_classname = "IdProto";
+option java_package = "org.cubewhy.qbychat.common.v1";
+
+message Id {
+  oneof content {
+    string string_id = 1;
+    fixed64 long_id = 2;
+  }
+}

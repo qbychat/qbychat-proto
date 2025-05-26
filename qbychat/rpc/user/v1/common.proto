@@ -1,0 +1,21 @@
+syntax = "proto3";
+package qbychat.rpc.user.v1;
+
+import "google/protobuf/timestamp.proto";
+import "qbychat/rpc/federation/v1/common.proto";
+
+option java_multiple_files = true;
+option java_outer_classname = "CommonProto";
+option java_package = "org.cubewhy.qbychat.rpc.user.v1";
+
+message PublicUserInfo {
+  federation.v1.FederationId user_id = 1;
+  string username = 2;
+  string nickname = 3;
+  string bio = 4;
+}
+
+message PrivateUserInfo {
+  // TODO use Permissions to replace roles
+  google.protobuf.Timestamp create_time = 3;
+}

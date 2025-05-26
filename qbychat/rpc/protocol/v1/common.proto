@@ -1,11 +1,12 @@
 syntax = "proto3";
-package qbychat.websocket.protocol.v1;
+package qbychat.rpc.protocol.v1;
 
+import "qbychat/common/v1/id.proto";
 import "google/protobuf/any.proto";
 
 option java_multiple_files = true;
 option java_outer_classname = "CommonProto";
-option java_package = "org.cubewhy.qbychat.websocket.protocol.v1";
+option java_package = "org.cubewhy.qbychat.rpc.protocol.v1";
 
 message EncryptedMessage {
   uint64 session_id = 1;
@@ -15,7 +16,7 @@ message EncryptedMessage {
 }
 
 message ClientboundMessage {
-  optional string user_id = 1;
+  optional common.v1.Id user_id = 1;
 
   oneof content {
     protocol.v1.RpcResponse response = 2;
@@ -45,7 +46,7 @@ message RpcResponse {
 }
 
 message ServerboundMessage {
-  optional string user_id = 1;
+  optional common.v1.Id user_id = 1;
   protocol.v1.RpcRequest request = 2;
 }
 

@@ -1,15 +1,15 @@
 syntax = "proto3";
-package qbychat.websocket.room.v1;
+package qbychat.rpc.room.v1;
+
+import "qbychat/rpc/federation/v1/common.proto";
 
 option java_multiple_files = true;
 option java_outer_classname = "CommonProto";
-option java_package = "org.cubewhy.qbychat.websocket.room.v1";
+option java_package = "org.cubewhy.qbychat.rpc.room.v1";
 
 message Room {
-  string room_name = 1;
-  // TODO server_name
-  RoomType type = 2;
-
+  federation.v1.FederationId room_id = 1;
+  
   oneof details {
     PrivateRoom private = 10;
     GroupRoom group = 11;
@@ -33,10 +33,14 @@ message PrivateRoom {
 
 message GroupRoom {
   string display_name = 1;
-  optional string description = 2;
+  string description = 2;
+  
+  string link = 3;
 }
 
 message ChannelRoom {
   string display_name = 1;
   string description = 2;
+  
+  string link = 3;
 }

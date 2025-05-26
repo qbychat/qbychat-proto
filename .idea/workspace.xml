@@ -5,7 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="efcc2f0d-8104-4915-bdd4-1b1d7d0fb851" name="Changes" comment="Conversation">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,8 +24,8 @@
 }</component>
   <component name="GithubPullRequestsUISettings"><![CDATA[{
   "selectedUrlAndAccountId": {
-    "url": "https://github.com/qbychat/qbychat-proto",
-    "accountId": "db43717b-597f-46d6-aeb8-0cb1bce22fdd"
+    "url": "https://github.com/qbychat/qbychat-proto.git",
+    "accountId": "04c7b81f-005f-4edf-9a4f-c2a12f30ee15"
   }
 }]]></component>
   <component name="ProjectColorInfo">{
@@ -43,7 +44,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/home/zszf/Desktop/dev/qbychat-proto",
+    "last_opened_file_path": "/home/cubewhy/projects/qbychat-proto",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -81,6 +82,7 @@
       <workItem from="1747577001267" duration="30000" />
       <workItem from="1748051869444" duration="87000" />
       <workItem from="1748051994787" duration="410000" />
+      <workItem from="1748266267014" duration="53000" />
     </task>
     <task id="LOCAL-00001" summary="Conversation">
       <option name="closed" value="true" />

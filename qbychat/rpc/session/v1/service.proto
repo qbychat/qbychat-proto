@@ -1,12 +1,12 @@
 syntax = "proto3";
-package qbychat.websocket.session.v1;
+package qbychat.rpc.session.v1;
 
 import "qbychat/common/v1/client_metadata.proto";
-import "qbychat/websocket/session/v1/common.proto";
+import "qbychat/rpc/session/v1/common.proto";
 
 option java_multiple_files = true;
 option java_outer_classname = "ServiceProto";
-option java_package = "org.cubewhy.qbychat.websocket.session.v1";
+option java_package = "org.cubewhy.qbychat.rpc.session.v1";
 
 message RegisterClientRequest {
   common.v1.ClientMetadata client_metadata = 1;
