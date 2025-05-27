@@ -4,14 +4,29 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="efcc2f0d-8104-4915-bdd4-1b1d7d0fb851" name="Changes" comment="Conversation">
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
+    <list default="true" id="efcc2f0d-8104-4915-bdd4-1b1d7d0fb851" name="Changes" comment="feat: id">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qbychat/rpc/auth/v1/service.proto" beforeDir="false" afterPath="$PROJECT_DIR$/qbychat/rpc/auth/v1/auth_service.proto" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qbychat/rpc/federation/v1/common.proto" beforeDir="false" afterPath="$PROJECT_DIR$/qbychat/rpc/federation/v1/federation_model.proto" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qbychat/rpc/protocol/v1/common.proto" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qbychat/rpc/room/v1/common.proto" beforeDir="false" afterPath="$PROJECT_DIR$/qbychat/rpc/room/v1/room_model.proto" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qbychat/rpc/room/v1/service.proto" beforeDir="false" afterPath="$PROJECT_DIR$/qbychat/rpc/room/v1/room_service.proto" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qbychat/rpc/session/v1/common.proto" beforeDir="false" afterPath="$PROJECT_DIR$/qbychat/rpc/session/v1/session_model.proto" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qbychat/rpc/session/v1/service.proto" beforeDir="false" afterPath="$PROJECT_DIR$/qbychat/rpc/session/v1/session_service.proto" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qbychat/rpc/user/v1/common.proto" beforeDir="false" afterPath="$PROJECT_DIR$/qbychat/rpc/user/v1/user_model.proto" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qbychat/rpc/user/v1/service.proto" beforeDir="false" afterPath="$PROJECT_DIR$/qbychat/rpc/user/v1/user_service.proto" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Protobuf" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -22,22 +37,26 @@
     &quot;assignee&quot;: &quot;cubewhy&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/qbychat/qbychat-proto.git",
-    "accountId": "04c7b81f-005f-4edf-9a4f-c2a12f30ee15"
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/qbychat/qbychat-proto.git&quot;,
+    &quot;accountId&quot;: &quot;04c7b81f-005f-4edf-9a4f-c2a12f30ee15&quot;
   }
-}]]></component>
+}</component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 8
 }</component>
   <component name="ProjectId" id="2uyUtsXpTwLnbA2mP8YrJ1jSSfD" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager": "true",
     "RunOnceActivity.git.unshallow": "true",
@@ -50,7 +69,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "settings.editor.selected.configurable": "fileTemplates",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -83,6 +102,8 @@
       <workItem from="1748051869444" duration="87000" />
       <workItem from="1748051994787" duration="410000" />
       <workItem from="1748266267014" duration="53000" />
+      <workItem from="1748266320892" duration="2206000" />
+      <workItem from="1748344474129" duration="5900000" />
     </task>
     <task id="LOCAL-00001" summary="Conversation">
       <option name="closed" value="true" />
@@ -92,7 +113,15 @@
       <option name="project" value="LOCAL" />
       <updated>1748052374547</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="feat: id">
+      <option name="closed" value="true" />
+      <created>1748268524677</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1748268524677</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -100,6 +129,11 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Conversation" />
-    <option name="LAST_COMMIT_MESSAGE" value="Conversation" />
+    <MESSAGE value="feat: id" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: id" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

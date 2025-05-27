@@ -5,10 +5,6 @@ import "qbychat/common/v1/id.proto";
 import "google/protobuf/timestamp.proto";
 import "qbychat/common/v1/client_metadata.proto";
 
-option java_multiple_files = true;
-option java_outer_classname = "CommonProto";
-option java_package = "org.cubewhy.qbychat.rpc.session.v1";
-
 message Client {
   common.v1.Id client_id = 1;
   common.v1.ClientMetadata client_info = 2;

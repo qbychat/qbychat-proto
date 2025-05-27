@@ -1,11 +1,14 @@
 syntax = "proto3";
 package qbychat.rpc.user.v1;
 
-import "qbychat/rpc/user/v1/common.proto";
+import "qbychat/rpc/user/v1/user_model.proto";
 
-option java_multiple_files = true;
-option java_outer_classname = "ServiceProto";
-option java_package = "org.cubewhy.qbychat.rpc.user.v1";
+message SyncRequest {}
+
+message SyncResponse {
+  PublicUserInfo public_info = 1;
+  PrivateUserInfo private_info = 2;
+}
 
 message RegisterAccountRequest {
   string username = 1;
@@ -23,11 +26,4 @@ message RegisterAccountResponse {
     STATUS_USERNAME_EXISTS = 2;
     STATUS_BAD_USERNAME = 3;
   }
-}
-
-message SyncRequest {}
-
-message SyncResponse {
-  PublicUserInfo public_info = 1;
-  PrivateUserInfo private_info = 2;
 }

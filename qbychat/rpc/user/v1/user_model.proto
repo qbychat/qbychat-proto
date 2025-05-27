@@ -2,11 +2,7 @@ syntax = "proto3";
 package qbychat.rpc.user.v1;
 
 import "google/protobuf/timestamp.proto";
-import "qbychat/rpc/federation/v1/common.proto";
-
-option java_multiple_files = true;
-option java_outer_classname = "CommonProto";
-option java_package = "org.cubewhy.qbychat.rpc.user.v1";
+import "qbychat/rpc/federation/v1/federation_model.proto";
 
 message PublicUserInfo {
   federation.v1.FederationId user_id = 1;
