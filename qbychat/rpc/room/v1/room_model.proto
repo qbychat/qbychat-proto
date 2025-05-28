@@ -1,6 +1,7 @@
 syntax = "proto3";
 package qbychat.rpc.room.v1;
 
+import "qbychat/rpc/user/v1/user_model.proto";
 import "qbychat/rpc/federation/v1/federation_model.proto";
 
 message Room {
@@ -22,9 +23,7 @@ enum RoomType {
 }
 
 message PrivateRoom {
-  string peer_username = 1;
-  string peer_nickname = 2;
-  string peer_bio = 3;
+  user.v1.PublicUserInfo peer_user = 1;
 }
 
 message GroupRoom {
