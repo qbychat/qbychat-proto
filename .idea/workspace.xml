@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="efcc2f0d-8104-4915-bdd4-1b1d7d0fb851" name="Changes" comment="refactor: use protobuf timestamp instead int64" />
+    <list default="true" id="efcc2f0d-8104-4915-bdd4-1b1d7d0fb851" name="Changes" comment="fix: add V1 suffix to RPC_REQUEST_METHOD_CREATE_PRIVATE_ROOM">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -95,6 +97,7 @@
       <workItem from="1748344474129" duration="8222000" />
       <workItem from="1748405776261" duration="1299000" />
       <workItem from="1748423895209" duration="173000" />
+      <workItem from="1748432646143" duration="2011000" />
     </task>
     <task id="LOCAL-00001" summary="Conversation">
       <option name="closed" value="true" />
@@ -136,7 +139,23 @@
       <option name="project" value="LOCAL" />
       <updated>1748406345966</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="room service methods">
+      <option name="closed" value="true" />
+      <created>1748432701710</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1748432701710</updated>
+    </task>
+    <task id="LOCAL-00007" summary="fix: add V1 suffix to RPC_REQUEST_METHOD_CREATE_PRIVATE_ROOM">
+      <option name="closed" value="true" />
+      <created>1748432784433</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1748432784433</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -148,7 +167,9 @@
     <MESSAGE value="refactor(proto): standardize protobuf package names and file organization&#10;&#10;- Align protobuf package declarations with directory structure&#10;- Separate model and service definitions into distinct proto files for better maintainability&#10;- Remove generic common.proto/service.proto files; improve modular boundaries&#10;- Organize proto files to facilitate automation and dependency management" />
     <MESSAGE value="chore(proto): add UserEvent message structure for instance communication" />
     <MESSAGE value="refactor: use protobuf timestamp instead int64" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor: use protobuf timestamp instead int64" />
+    <MESSAGE value="room service methods" />
+    <MESSAGE value="fix: add V1 suffix to RPC_REQUEST_METHOD_CREATE_PRIVATE_ROOM" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: add V1 suffix to RPC_REQUEST_METHOD_CREATE_PRIVATE_ROOM" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

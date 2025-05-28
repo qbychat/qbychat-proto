@@ -7,9 +7,9 @@ message Room {
   federation.v1.FederationId room_id = 1;
   
   oneof details {
-    PrivateRoom private = 10;
-    GroupRoom group = 11;
-    ChannelRoom channel = 12;
+    PrivateRoom private_room = 10;
+    GroupRoom group_room = 11;
+    ChannelRoom channel_room = 12;
   }
 }
 
