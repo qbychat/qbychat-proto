@@ -23,7 +23,7 @@ enum RoomType {
 }
 
 message PrivateRoom {
-  user.v1.PublicUserInfo peer_user = 1;
+  user.v1.PublicUserProfile peer_user = 1;
 }
 
 message GroupRoom {

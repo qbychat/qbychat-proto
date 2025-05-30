@@ -4,14 +4,14 @@ package qbychat.rpc.user.v1;
 import "google/protobuf/timestamp.proto";
 import "qbychat/rpc/federation/v1/federation_model.proto";
 
-message PublicUserInfo {
+message PublicUserProfile {
   federation.v1.FederationId user_id = 1;
   string username = 2;
   string nickname = 3;
   string bio = 4;
 }
 
-message PrivateUserInfo {
+message PrivateUserProfile {
   // TODO use Permissions to replace roles
   google.protobuf.Timestamp create_time = 3;
 }
