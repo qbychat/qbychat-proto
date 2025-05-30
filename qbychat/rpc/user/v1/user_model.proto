@@ -4,6 +4,11 @@ package qbychat.rpc.user.v1;
 import "google/protobuf/timestamp.proto";
 import "qbychat/rpc/federation/v1/federation_model.proto";
 
+message FederationUsername {
+  optional string domain = 1;
+  string username = 2;
+}
+
 message PublicUserProfile {
   federation.v1.FederationId user_id = 1;
   string username = 2;

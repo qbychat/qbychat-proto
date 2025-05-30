@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="efcc2f0d-8104-4915-bdd4-1b1d7d0fb851" name="Changes" comment="use FederationId in CreatePrivateRoomRequest">
+    <list default="true" id="efcc2f0d-8104-4915-bdd4-1b1d7d0fb851" name="Changes" comment="add RPC_REQUEST_METHOD_QUERY_USER_V1">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qbychat/rpc/user/v1/user_service.proto" beforeDir="false" afterPath="$PROJECT_DIR$/qbychat/rpc/user/v1/user_service.proto" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,6 +101,7 @@
       <workItem from="1748432646143" duration="2011000" />
       <workItem from="1748475772001" duration="1175000" />
       <workItem from="1748510078381" duration="2539000" />
+      <workItem from="1748573217498" duration="1564000" />
     </task>
     <task id="LOCAL-00001" summary="Conversation">
       <option name="closed" value="true" />
@@ -181,7 +183,15 @@
       <option name="project" value="LOCAL" />
       <updated>1748478671636</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="add RPC_REQUEST_METHOD_QUERY_USER_V1">
+      <option name="closed" value="true" />
+      <created>1748574748733</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1748574748733</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -198,7 +208,8 @@
     <MESSAGE value="fix: add _room suffix to details" />
     <MESSAGE value="use peer_user in PrivateRoom" />
     <MESSAGE value="use FederationId in CreatePrivateRoomRequest" />
-    <option name="LAST_COMMIT_MESSAGE" value="use FederationId in CreatePrivateRoomRequest" />
+    <MESSAGE value="add RPC_REQUEST_METHOD_QUERY_USER_V1" />
+    <option name="LAST_COMMIT_MESSAGE" value="add RPC_REQUEST_METHOD_QUERY_USER_V1" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
