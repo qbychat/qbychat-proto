@@ -1,0 +1,8 @@
+syntax = "proto3";
+package qbychat.rpc.session.v1;
+
+import "qbychat/common/v1/id.proto";
+
+message SwitchMainSessionEvent {
+  common.v1.Id main_account_id = 1;
+}

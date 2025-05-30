@@ -7,7 +7,7 @@ import "qbychat/common/v1/client_metadata.proto";
 
 message Client {
   common.v1.Id client_id = 1;
-  common.v1.ClientMetadata client_info = 2;
+  common.v1.ClientMetadata client_metadata = 2;
   google.protobuf.Timestamp create_time = 3;
 }
 

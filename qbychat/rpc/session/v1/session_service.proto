@@ -2,6 +2,7 @@ syntax = "proto3";
 package qbychat.rpc.session.v1;
 
 import "qbychat/common/v1/client_metadata.proto";
+import "qbychat/common/v1/id.proto";
 import "qbychat/rpc/session/v1/session_model.proto";
 
 message RegisterClientRequest {
@@ -17,15 +18,15 @@ message ResumeClientRequest {
 }
 
 message ResumeClientResponse {
-  repeated string account_ids = 1;
-  string current_account_id = 2;
+  repeated common.v1.Id account_ids = 1;
+  common.v1.Id main_account_id = 2;
 }
 
-message SwitchPrimaryAccountRequest {
-  string account = 1;
+message SwitchMainAccountRequest {
+  common.v1.Id account = 1;
 }
 
-message SwitchPrimaryAccountResponse {
+message SwitchMainAccountResponse {
   Status status = 1;
 
   enum Status {
@@ -37,7 +38,7 @@ message SwitchPrimaryAccountResponse {
 }
 
 message TerminateSessionRequest {
-  string session_id = 1; // session id
+  common.v1.Id session_id = 1; // session id
 }
 
 message TerminateSessionResponse {
