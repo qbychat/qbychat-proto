@@ -1,0 +1,27 @@
+syntax = "proto3";
+package qbychat.rpc.protocol.v1;
+
+message EncryptedMessage {
+  uint64 session_id = 1;
+  uint64 sequence_number = 2;
+  bytes nonce = 3;
+  bytes ciphertext = 4;
+}
+
+message ClientEncryptionInfo {
+  bytes public_key = 2; // client public key
+  bytes chacha20_key_info = 5;
+}
+
+message ServerEncryptionInfo {
+  bytes public_key = 1; // server public key
+  uint64 session_id = 2;
+}
+
+message ServerboundHandshake {
+  optional ClientEncryptionInfo encryption_info = 1;
+}
+
+message ClientboundHandshake {
+  optional ServerEncryptionInfo encryption_info = 1;
+}

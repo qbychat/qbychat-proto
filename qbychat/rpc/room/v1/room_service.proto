@@ -1,0 +1,21 @@
+syntax = "proto3";
+package qbychat.rpc.room.v1;
+
+import "qbychat/rpc/federation/v1/federation_model.proto";
+import "qbychat/rpc/room/v1/room_model.proto";
+
+message SyncRequest {}
+
+message SyncResponse {
+  repeated Room joined_rooms = 1;
+  // TODO folders...
+}
+
+message CreatePrivateRoomRequest {
+  federation.v1.FederationId peer_id = 1;
+  string initial_message = 2;
+}
+
+message CreatePrivateRoomResponse {
+  Room room = 1;
+}

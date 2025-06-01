@@ -1,0 +1,48 @@
+syntax = "proto3";
+package qbychat.rpc.user.v1;
+
+import "qbychat/rpc/federation/v1/federation_model.proto";
+import "qbychat/rpc/user/v1/user_model.proto";
+
+message SyncRequest {}
+
+message SyncResponse {
+  PublicUserProfile public_info = 1;
+  PrivateUserProfile private_info = 2;
+}
+
+message RegisterAccountRequest {
+  string username = 1;
+  string password = 2;
+}
+
+message RegisterAccountResponse {
+  Status status = 1;
+
+  optional string account_id = 2;
+
+  enum Status {
+    STATUS_UNSPECIFIED = 0;
+    STATUS_SUCCESS = 1;
+    STATUS_USERNAME_EXISTS = 2;
+    STATUS_BAD_USERNAME = 3;
+  }
+}
+
+message QueryUserRequest {
+  oneof identifier {
+    federation.v1.FederationId user_id = 1;
+    FederationUsername username = 2;
+  }
+}
+
+message QueryUserResponse {
+  Status status = 1;
+  optional PublicUserProfile user_profile = 2;
+
+  enum Status {
+    STATUS_UNSPECIFIED = 0;
+    STATUS_SUCCESS = 1;
+    STATUS_USER_NOT_FOUND = 2;
+  }
+}

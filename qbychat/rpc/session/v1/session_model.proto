@@ -1,0 +1,18 @@
+syntax = "proto3";
+package qbychat.rpc.session.v1;
+
+import "qbychat/common/v1/id.proto";
+import "google/protobuf/timestamp.proto";
+import "qbychat/common/v1/client_metadata.proto";
+
+message Client {
+  common.v1.Id client_id = 1;
+  common.v1.ClientMetadata client_metadata = 2;
+  google.protobuf.Timestamp create_time = 3;
+}
+
+message Session {
+  common.v1.Id session_id = 1;
+  Client client = 2;
+  google.protobuf.Timestamp create_time = 3;
+}

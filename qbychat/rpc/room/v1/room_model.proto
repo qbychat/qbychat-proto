@@ -1,0 +1,41 @@
+syntax = "proto3";
+package qbychat.rpc.room.v1;
+
+import "qbychat/rpc/user/v1/user_model.proto";
+import "qbychat/rpc/federation/v1/federation_model.proto";
+
+message Room {
+  federation.v1.FederationId room_id = 1;
+  
+  oneof details {
+    PrivateRoom private_room = 10;
+    GroupRoom group_room = 11;
+    ChannelRoom channel_room = 12;
+  }
+}
+
+enum RoomType {
+  ROOM_TYPE_UNSPECIFIED = 0;
+
+  ROOM_TYPE_PRIVATE = 1;
+  ROOM_TYPE_GROUP = 2;
+  ROOM_TYPE_CHANNEL = 3;
+}
+
+message PrivateRoom {
+  user.v1.PublicUserProfile peer_user = 1;
+}
+
+message GroupRoom {
+  string display_name = 1;
+  string description = 2;
+  
+  string link = 3;
+}
+
+message ChannelRoom {
+  string display_name = 1;
+  string description = 2;
+  
+  string link = 3;
+}

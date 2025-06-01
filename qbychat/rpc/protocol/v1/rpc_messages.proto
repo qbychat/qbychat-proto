@@ -1,0 +1,55 @@
+syntax = "proto3";
+package qbychat.rpc.protocol.v1;
+
+message RpcRequest {
+  bytes ticket = 1;
+  RpcRequestMethod method = 2;
+
+  optional bytes payload = 4;
+}
+
+message RpcResponse {
+  bytes ticket = 1;
+  optional bytes payload = 2;
+
+  Status status = 3;
+  optional string message = 4;
+
+  enum Status {
+    STATUS_UNSPECIFIED = 0;
+
+    STATUS_SUCCESS = 200;
+
+    STATUS_BAD_REQUEST = 400;
+    STATUS_UNAUTHORIZED = 401;
+    STATUS_FORBIDDEN = 403;
+    STATUS_NOT_FOUND = 404;
+
+    STATUS_INTERNAL_ERROR = 500;
+  }
+}
+
+enum RpcRequestMethod {
+  RPC_REQUEST_METHOD_UNSPECIFIED = 0;
+
+  // session service v1 (100-200)
+  RPC_REQUEST_METHOD_SESSION_SYNC_V1 = 100;
+  RPC_REQUEST_METHOD_REGISTER_CLIENT_V1 = 101;
+  RPC_REQUEST_METHOD_RESUME_CLIENT_V1 = 102;
+  RPC_REQUEST_METHOD_SWITCH_PRIMARY_ACCOUNT_V1 = 103;
+  RPC_REQUEST_METHOD_TERMINATE_SESSION_V1 = 104;
+  RPC_REQUEST_METHOD_LIST_SESSIONS_V1 = 105;
+  RPC_REQUEST_METHOD_TRUST_SESSION_V1 = 106;
+
+  // auth service v1 (201-300)
+  RPC_REQUEST_METHOD_USERNAME_PASSWORD_LOGIN_V1 = 201;
+
+  // user service v1 (301-400)
+  RPC_REQUEST_METHOD_USER_SYNC_V1 = 301;
+  RPC_REQUEST_METHOD_REGISTER_ACCOUNT_V1 = 302;
+  RPC_REQUEST_METHOD_QUERY_USER_V1 = 303;
+
+  // room service v1 (401-500)
+  RPC_REQUEST_METHOD_ROOM_SYNC_V1 = 401;
+  RPC_REQUEST_METHOD_CREATE_PRIVATE_ROOM_V1 = 402;
+}

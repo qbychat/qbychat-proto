@@ -1,0 +1,19 @@
+syntax = "proto3";
+package qbychat.rpc.protocol.v1;
+
+import "qbychat/common/v1/id.proto";
+import "google/protobuf/any.proto";
+import "google/protobuf/timestamp.proto";
+
+message InstanceEvent {  
+  optional common.v1.Id user_id = 1;
+  
+  oneof event {
+    UserEvent user_event = 101;
+  }
+  google.protobuf.Timestamp timestamp = 2;
+}
+
+message UserEvent {
+  google.protobuf.Any event = 1;
+}
