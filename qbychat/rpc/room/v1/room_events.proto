@@ -1,0 +1,27 @@
+syntax = "proto3";
+package qbychat.rpc.room.v1;
+
+import "qbychat/rpc/federation/v1/federation_model.proto";
+import "qbychat/rpc/room/v1/room_model.proto";
+import "google/protobuf/field_mask.proto";
+
+message AddRoomEvent {
+  Room room = 1;
+}
+
+message RemoveRoomEvent {
+  federation.v1.FederationId room_id = 1;
+  Reason reason = 2;
+  
+  enum Reason {
+    REASON_UNSPECIFIED = 0;
+    REASON_QUIT_MANUALLY = 1;
+    REASON_BANNED = 2;
+    REASON_KICKED = 3;
+  }
+}
+
+message UpdateRoomEvent {
+  Room room = 1;
+  google.protobuf.FieldMask update_mask = 2;
+}
